@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+torch==2.4.0 --index-url https://download.pytorch.org/whl/cpu
+transformers
+peft
+bitsandbytes
+accelerate
+nest-asyncio

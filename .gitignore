@@ -1,0 +1,5 @@
+# Ignore ML model files
+*.pt
+*.safetensors
+checkpoint-*/
+claim_model_ashly_final/

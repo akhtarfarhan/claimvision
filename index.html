@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClaimVision – File a Damage Claim</title>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Font: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="glass-container">
+        <!-- Header -->
+        <div class="header">
+          <h1>ClaimVision</h1>
+          <p>File Your Damage Claim Seamlessly</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+          <!-- Mode Toggle -->
+          <div class="mode-toggle">
+            <button
+              class="mode-btn active"
+              id="imageBtn"
+              onclick="switchMode('image')"
+            >
+              Upload Image
+            </button>
+            <button
+              class="mode-btn"
+              id="manualBtn"
+              onclick="switchMode('manual')"
+            >
+              Manual Entry
+            </button>
+          </div>
+
+          <!-- Image Upload Section -->
+          <div id="imageSection" class="section active">
+            <label class="upload-zone">
+              <input type="file" id="damageImages" accept="image/*" multiple />
+              <div class="upload-icon">📸</div>
+              <h4>Drop damage photos here</h4>
+              <p class="text-muted mb-0">
+                or click to select multiple images (JPG, PNG)
+              </p>
+            </label>
+            <div id="fileInfo" class="file-info"></div>
+          </div>
+
+          <!-- Manual Entry Section -->
+          <div id="manualSection" class="section">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label class="form-label">Shipment ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="shipment_id"
+                  placeholder="e.g. SHIP-12345"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Tracking ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="tracking_id"
+                  placeholder="e.g. TRK-789012"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Carrier</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="carrier"
+                  placeholder="e.g. BlueDart, FedEx"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Route</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="route"
+                  placeholder="e.g. Delhi → Bangalore"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Expected Delivery</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="expected_delivery"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Actual Delivery</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="actual_delivery"
+                />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Incident Location</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="incident_location"
+                  placeholder="e.g. Warehouse Mumbai"
+                />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Damage Severity</label>
+                <select class="form-select" name="damage_severity">
+                  <option value="">Select severity</option>
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <div class="col-md-8">
+                <label class="form-label">Damage Types</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="damage_types"
+                  placeholder="e.g. broken, crack, dent"
+                />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Damage Description</label>
+                <textarea
+                  class="form-control"
+                  rows="5"
+                  name="damage_description"
+                  placeholder="Describe the damage in detail..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn-claim">Submit Claim & Generate Report</button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>
