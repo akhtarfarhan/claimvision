@@ -45,7 +45,7 @@ document.querySelector(".btn-claim").addEventListener("click", async () => {
   if (resultBox) resultBox.remove();
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/generate-claim", {
+    const res = await fetch("/generate-claim", { 
       method: "POST",
       body: formData
     });
